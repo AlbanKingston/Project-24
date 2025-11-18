@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analog & Digital Clock</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <audio id="tickSound" src="tick.mp3"></audio>
+  <audio id="chimeSound" src="chime.mp3"></audio>
+
+  <div class="clock-wrapper">
+    <button id="toggleBtn">Switch to Analog</button>
+    <div class="clock-container fade" id="digitalClock">
+      <div class="time" id="time">00:00:00</div>
+      <div class="date" id="date">Loading date...</div>
+      <div class="day" id="day">Loading day...</div>
+    </div>
+
+    <div class="analog-clock fade hidden" id="analogClock">
+      <div class="hand hour" id="hourHand"></div>
+      <div class="hand minute" id="minuteHand"></div>
+      <div class="hand second" id="secondHand"></div>
+      <div class="center-point"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

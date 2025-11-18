@@ -1,0 +1,143 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url("https://res.cloudinary.com/dpsnatqhu/image/upload/v1763209127/Clock_qjmxw5.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+  color: #fff;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(1px);
+  z-index: 0;
+}
+
+.clock-wrapper {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+#toggleBtn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #fff;
+  font-size: 1em;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+#toggleBtn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.fade {
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.clock-container {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 40px 60px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  backdrop-filter: blur(2px);
+}
+
+.time {
+  font-size: 4em;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff;
+  animation: glow 2s infinite alternate;
+}
+
+.date {
+  font-size: 1.5em;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+.day {
+  margin-top: 5px;
+  font-weight: bold;
+  font-size: 2em;
+  text-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff;
+  color: #00eeff;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #00ffff;
+  }
+  to {
+    text-shadow: 0 0 60px #00ffff;
+  }
+}
+
+.analog-clock {
+  width: 250px;
+  height: 250px;
+  border: 8px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  position: relative;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+.hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  transform: translateX(-50%) rotate(0deg);
+  border-radius: 5px;
+}
+
+.hand.hour {
+  width: 6px;
+  height: 60px;
+  background: #00ffff;
+}
+
+.hand.minute {
+  width: 4px;
+  height: 80px;
+  background: #ec0202;
+}
+
+.hand.second {
+  width: 2px;
+  height: 90px;
+  background: #ff4444;
+}
+
+.center-point {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
